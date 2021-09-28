@@ -1,0 +1,289 @@
+<app-menu></app-menu>
+
+<div class="">
+
+    <!-- JUMBOTRON -->
+    <div class="jumbotron jumbotron-fluid jumbotron-cor-fundo">
+
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center align-items-center">
+
+                <div class="col-md-8 ">
+
+                    <div class="container d-flex justify-content-center jumbotron-largura">
+
+                        <div class="jumbotron-largura">
+                            <!-- TITULO -->
+                            <div class="jb-titulo">
+                                <h1 class="display-4 text-center text-light">O que você procura?</h1>
+                                <p class="lead text-center text-light">"Alguma frase tipo: Aqui você encontra"</p>
+                            </div>
+                            <!-- /TITULO -->
+
+
+                            <div class="row d-flex justify-content-center mt-5 mb-5">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="nome" placeholder="Digite o nome do produto que deseja pesquisar" [(ngModel)]='nomePost' (keyup)='findByNome()'>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- /JUMBOTRON -->
+
+</div>
+
+
+<div class="jumbotron jumbotron-fluid corpo-jumbotron">
+    <div class="">
+        <h5 class="display-6">As melhores ofertas</h5>
+    </div>
+</div>
+
+<!-- LISTA DE TODOS OS PRODUTOS -->
+
+<div class="container-fluid tamanho-container">
+    <div class="row d-flex justify-content-center">
+
+        <div *ngFor="let item of listaProduto" class="col-md-3 largura-col">
+            <!-- <div class="col-md-3  "> -->
+
+            <div class="card-sl card-list-margin tamanhdo-do-card animacao-card">
+                <div class="card-image tamanhdo-imagem">
+                    <img class="img-fluid testando" src="{{item.foto}}" />
+                </div>
+
+                <a class="card-action" href="#"><i class="fa fa-heart"></i></a>
+                <div class="card-heading card-cabeca">
+                    <h5 class="card-title">{{item.nome}}</h5>
+                </div>
+                <div class="card-text tamanhdo-descricao ">
+                    {{item.descricao}}
+                </div>
+                <div class="card-text">
+                    R$: {{item.preco}}
+                </div>
+                <a [routerLink]="['/comprar', item.id]" class="card-button card-font card-btn-color"> Comprar</a>
+            </div>
+
+            <!-- </div> -->
+        </div>
+    </div>
+</div>
+
+
+<div class="jumbotron jumbotron-fluid corpo-jumbotron">
+    <div class="">
+        <h5 class="display-6">Descubra mais</h5>
+    </div>
+</div>
+
+<div class="container">
+    <!-- LISTA DAS CATEGORIAS -->
+
+    <div data-aos="fade-right">
+        <div class="row mb-4">
+
+            <div class="col-md-4">
+
+                <!-- CARDS CATEGORIA -->
+                <a href="" class="categorias-link">
+                    <div class="card teste">
+
+                        <div class="card-body corpo-card">
+                            <img src="https://i.imgur.com/35p5t11.png" class="card-img-top img-fluid" alt="..." />
+
+                            <div class="mb-3">
+                                <h5 class="card-title text-center">Moda</h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </a>
+                <!-- CARDS CATEGORIA -->
+
+            </div>
+
+            <div class="col-md-4">
+
+                <!-- CARDS CATEGORIA -->
+                <a href="" class="categorias-link">
+                    <div class="card teste">
+
+                        <div class="card-body corpo-card">
+                            <img src="https://i.imgur.com/35p5t11.png" class="card-img-top img-fluid" alt="..." />
+
+                            <div class="mb-3">
+                                <h5 class="card-title text-center">Eletrônicos</h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </a>
+                <!-- CARDS CATEGORIA -->
+
+            </div>
+
+            <div class="col-md-4">
+
+                <!-- CARDS CATEGORIA -->
+                <a href="" class="categorias-link">
+                    <div class="card teste">
+
+                        <div class="card-body corpo-card">
+                            <img src="https://i.imgur.com/pLIWX8I.jpg" class="card-img-top img-fluid" alt="..." />
+
+                            <div class="mb-3">
+                                <h5 class="card-title text-center">Beleza</h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </a>
+                <!-- CARDS CATEGORIA -->
+            </div>
+
+        </div>
+    </div>
+
+    <div data-aos="fade-left">
+        <div class="row">
+
+            <div class="col-md-4">
+
+                <!-- CARDS CATEGORIA -->
+                <a href="" class="categorias-link">
+                    <div class="card teste">
+
+                        <div class="card-body corpo-card">
+                            <img src="https://i.imgur.com/M4J3qwr.jpg" class="card-img-top img-fluid" alt="..." />
+
+                            <div class="mb-3">
+                                <h5 class="card-title text-center">Casa e decoração</h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </a>
+                <!-- CARDS CATEGORIA -->
+
+            </div>
+            <div class="col-md-4">
+
+                <!-- CARDS CATEGORIA -->
+                <a href="" class="categorias-link">
+                    <div class="card teste">
+
+                        <div class="card-body corpo-card">
+                            <img src="https://i.imgur.com/35p5t11.png" class="card-img-top img-fluid" alt="..." />
+
+                            <div class="mb-3">
+                                <h5 class="card-title text-center">Acessórios</h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </a>
+                <!-- CARDS CATEGORIA -->
+
+            </div>
+            <div class="col-md-4">
+
+                <!-- CARDS CATEGORIA -->
+                <a href="" class="categorias-link">
+                    <div class="card teste">
+
+                        <div class="card-body corpo-card">
+                            <img src="https://i.imgur.com/8F3Z7dH.jpg" class="card-img-top img-fluid" alt="..." />
+
+                            <div class="mb-3">
+                                <h5 class="card-title text-center">Produtos e Objetos</h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </a>
+                <!-- CARDS CATEGORIA -->
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- <div class="container">
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card bg-dark text-white">
+                <img class="card-img" src="https://i.imgur.com/4EJmJnq.jpg" alt="Imagem do card">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">Borbeletas não para de crescer!</h5>
+                    <p class="card-text">Em breve vc poderá fornecer os seus serviços</p>
+                    <p class="card-text">Atualizados 3 minutos atrás</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mt-3">
+        <div class="col-sm-6">
+            <a href="" class="card-borboletas-projeto-link">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Vamos juntos impulsionar seu negócio?</h5>
+                        <p class="card-text">Re-invesnte-se, trabalhe duro, empodere-se Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis, facilis? Ducimus soluta fugit autem incidunt earum voluptatem labore</p>
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-6">
+            <a href="" class="card-borboletas-projeto-link">
+                <div class="card">
+                    <div class="card-body card-borboletas-projeto-img">
+                        <h5 class="card-title">Contribuindo com o meio ambiente</h5>
+                        <p class="card-text">lutamos cpor causas ambientais Lorem ipsum dolor sit amet consectetur adipisicing elit.! Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum excepturi quaerat ab sed ipsam. Iste sint in corporis. Iste sint in corporis. Iste sint in corporis. </p>
+                        
+                    </div>
+
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div> -->
+
+<!-- CAROUSEL CARDS -->
+
+
+
+  <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
